@@ -10,6 +10,7 @@ public class User {
 	private String firstName;
 	private String lastName;
 	private String email;
+	private UUID managerId;
 	private float availableAmount;
 	private UserType type;
 	private String directSupervisor;
@@ -20,12 +21,14 @@ public class User {
 		super();
 	}
 	
-	public User(UUID id, String username, String password, String firstName, String lastName, float availableAmount, UserType type, String directSupervisor, String departmentHead, String benCo) {
+	public User(UUID id, String username, String password, String firstName, String lastName, String email, UUID managerId, float availableAmount, UserType type, String directSupervisor, String departmentHead, String benCo) {
 		this.id = id;
 		this.username = username;
 		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.email = email;
+		this.managerId = managerId;
 		this.availableAmount = availableAmount;
 		this.type = type;
 		this.directSupervisor = directSupervisor;
@@ -80,7 +83,15 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	public UUID getManagerId() {
+		return managerId;
+	}
 
+	public void setManagerId(UUID managerId) {
+		this.managerId = managerId;
+	}
+	
 	public float getAvailableAmount() {
 		return availableAmount;
 	}
@@ -136,7 +147,7 @@ public class User {
 	@Override
 	public int hashCode() {
 		return Objects.hash(availableAmount, benCo, departmentHead, directSupervisor, email, firstName, id, lastName,
-				password, type, username);
+				password, type, username, managerId);
 	}
 
 	@Override
@@ -153,8 +164,7 @@ public class User {
 				&& Objects.equals(directSupervisor, other.directSupervisor) && Objects.equals(email, other.email)
 				&& Objects.equals(firstName, other.firstName) && Objects.equals(id, other.id)
 				&& Objects.equals(lastName, other.lastName) && Objects.equals(password, other.password)
-				&& type == other.type && Objects.equals(username, other.username);
-	}
-
-	
+				&& type == other.type && Objects.equals(username, other.username)
+				&& Objects.equals(managerId, other.managerId);
+	}	
 }

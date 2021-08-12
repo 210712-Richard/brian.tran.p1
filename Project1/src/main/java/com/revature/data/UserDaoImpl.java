@@ -86,11 +86,5 @@ public class UserDaoImpl implements UserDao{
 		return u;
 	}
 
-	@Override
-	public void updateUser(User user) {
-		// TODO Auto-generated method stub
-		
-	}
-
 	
 }

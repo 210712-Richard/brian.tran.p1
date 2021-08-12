@@ -13,6 +13,6 @@ public interface UserDao {
 
 	User getUser(String username);
 
-	void updateUser(User user);
+	//void updateUser(User user);
 	
 }
