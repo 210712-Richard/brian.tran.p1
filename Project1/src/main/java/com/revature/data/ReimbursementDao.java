@@ -18,4 +18,8 @@ public interface ReimbursementDao {
 	List<Request> getUrgents();
 	
 	void deleteRequest(UUID rid);
+	
+	List<Request> uploadFile(UUID rid, String attachment);
+	
+	List<Request> getRequestByRid(UUID rid);
 }

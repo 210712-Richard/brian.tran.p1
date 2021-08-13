@@ -60,7 +60,7 @@ public class Driver {
 		app.post("/login", uc::login);
 		
 		// As a user, I can get a user information
-		app.get("/users/:userid", uc::login);
+		//app.get("/users/:username", uc::login);
 		
 		// As a user, I can register for a login account
 		app.post("/users/", uc::register);
@@ -69,22 +69,32 @@ public class Driver {
 		//app.put("/users/:userid", uc::update)
 		
 		// As a user, I can logout 
-		app.delete("/users/:userid", uc::logout);
+		app.delete("/users/:username", uc::logout);
 		
 		
 		//Endpoints for Reimbursements
 		//As a user, I can get a reimbursement
-		app.get("/users/:userid/reimbursements", rc::getRequest);
+		app.get("/users/:username/reimbursements", rc::getRequest);
+		
+		//As an Admin, I can get urgent requests
+		app.get("/users/:username/urgents", rc::getUrgents);
 		
 		//As a user, I can request for a reimbursement
-		app.post("/users/:userid/reimbursements", rc::newRequest);
+		app.post("/users/:username/reimbursements", rc::newRequest);
+		
+		//As a user, I can cancel a pending request
+		app.delete("/users/:username/reimbursements", rc::cancelRequest);
 		
 		//As a user, I can update/approve/deny a reimbursement request
-		app.put("/users/:userid/reimbursements/:requestid", rc::updateRequest);
+		app.put("/users/:username/reimbursements/:requestid", rc::updateRequest);
 		//As a user, I can approve/deny a reimbursement request
 		
 		//Endpoints for S3
 		//As a user, I can upload files to S3 bucket	
-		app.post("/users/:userid/reimbursements/:requestid/uploadFile", rc::uploadFile);
+		app.post("/users/:username/reimbursements/:requestid/attachments", rc::uploadFile);
+		
+		//As a user, I can get an attachment from a request
+		app.get("/users/:username/reimbursements/:requestid/attachments", rc::getFile);
+
 	}
 }

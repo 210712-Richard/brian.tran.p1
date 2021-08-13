@@ -21,7 +21,9 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User login(String username, String password) {
 		// TODO Auto-generated method stub
+		log.trace("Get User for login method called");
 		User u = ud.getUser(username);
+		log.trace("Called ud");
 		if(u.getPassword().equals(password)){
 			return u;
 		}
@@ -35,7 +37,7 @@ public class UserServiceImpl implements UserService {
 		log.trace("Adding user to Dao method called");
 
 		ud.addUser(u);
-		return null;
+		return u;
 	}
 	
 	public boolean checkAvailability(String newName) {

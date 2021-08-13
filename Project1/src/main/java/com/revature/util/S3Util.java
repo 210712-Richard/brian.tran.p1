@@ -5,6 +5,9 @@ import java.io.InputStream;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.datastax.oss.driver.api.core.CqlSession;
+import com.datastax.oss.driver.api.core.config.DriverConfigLoader;
+
 import software.amazon.awssdk.core.sync.RequestBody;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.s3.S3Client;
@@ -13,7 +16,7 @@ import software.amazon.awssdk.services.s3.model.PutObjectRequest;
 
 public class S3Util {
 	public static final Region region = Region.US_EAST_2; // whatever your region is
-	public static final String BUCKET_NAME= "Project1";
+	public static final String BUCKET_NAME= "brian-tran-project1";
 	
 	private static Logger log = LogManager.getLogger(S3Util.class);
 	
@@ -23,6 +26,7 @@ public class S3Util {
 	
 	private S3Util() {
 		s3 = S3Client.builder().region(region).build();
+		
 	}
 
 	public static synchronized S3Util getInstance() {

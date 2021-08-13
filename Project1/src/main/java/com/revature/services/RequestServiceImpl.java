@@ -48,7 +48,24 @@ public class RequestServiceImpl implements RequestService {
 	@Override
 	public void updateRequest(User updateByUser, UUID rid, String attachment, String status, String reason, float rewardAmount) {
 		// TODO Auto-generated method stub
-		
+		rd.updateRequest(updateByUser, rid, attachment, status, reason, rewardAmount);
+	}
+	@Override
+	public List<Request> getUrgents() {
+		// TODO Auto-generated method stub
+		List<Request> r = rd.getUrgents();
+		return r;
 	}
 
+	@Override
+	public List<Request> uploadFile(UUID rid, String attachment) {
+		// TODO Auto-generated method stub
+		return rd.uploadFile(rid, attachment);
+		
+	}
+	
+	public List<Request> getRequestByRid(UUID rid){
+		return rd.getRequestByRid(rid);
+	}
+		
 }

@@ -10,7 +10,7 @@ public interface RequestService {
 	
 	void createRequest(UUID uid, Request r);
 
-	List<Request> getRequest(UUID rid);
+	List<Request> getRequest(UUID eid);
 	
 	List<Request> getRequests();	
 	
@@ -18,5 +18,9 @@ public interface RequestService {
 	
 	void updateRequest(User updateByUser, UUID rid, String attachment, String status, String reason, float rewardAmount);
 	
+	List<Request> getUrgents();	
 	
+	List<Request> uploadFile(UUID rid, String attachment);
+
+	List<Request> getRequestByRid(UUID rid);
 }

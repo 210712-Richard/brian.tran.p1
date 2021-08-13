@@ -52,14 +52,14 @@ public class UserControllerImpl implements UserController {
 		log.trace("UserMade");
 
 		
-		//if(us.checkAvailability(u.getUsername())) {
+		if(us.checkAvailability(u.getUsername())) {
 			User newUser = us.register(u.getUsername(), u.getPassword(), u.getFirstName(), u.getLastName(), u.getEmail(), u.getManagerId(), UserType.EMPLOYEE);
 			ctx.status(201);
 			ctx.json(newUser);
-		//} else {
-			//ctx.status(409);
-			//ctx.html("Username already taken.");
-		//}
+		} else {
+			ctx.status(409);
+			ctx.html("Username already taken.");
+		}
 		
 	}
 	

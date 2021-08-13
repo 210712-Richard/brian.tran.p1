@@ -71,7 +71,7 @@ public class Request {
 	public void setRid(UUID rid) {
 		this.rid = rid;
 	}
-	public double getReimburseAmount() {
+	public float getReimburseAmount() {
 		return reimburseAmount;
 	}
 	public void setReimburseAmount(float reimburseAmount) {
@@ -214,19 +214,18 @@ public class Request {
 			return false;
 		Request other = (Request) obj;
 		return approvedBy == other.approvedBy && Objects.equals(attachment, other.attachment)
-				&& Double.doubleToLongBits(cost) == Double.doubleToLongBits(other.cost)
+				&& Float.floatToIntBits(cost) == Float.floatToIntBits(other.cost)
 				&& Objects.equals(description, other.description) && Objects.equals(eid, other.eid)
 				&& Objects.equals(email, other.email) && Objects.equals(firstName, other.firstName)
 				&& Objects.equals(gradingFormat, other.gradingFormat) && isUrgent == other.isUrgent
 				&& Objects.equals(lastName, other.lastName) && Objects.equals(location, other.location)
 				&& Objects.equals(passingGrade, other.passingGrade) && Objects.equals(reason, other.reason)
-				&& Double.doubleToLongBits(reimburseAmount) == Double.doubleToLongBits(other.reimburseAmount)
-				&& Double.doubleToLongBits(rewardAmount) == Double.doubleToLongBits(other.rewardAmount)
+				&& Float.floatToIntBits(reimburseAmount) == Float.floatToIntBits(other.reimburseAmount)
+				&& Float.floatToIntBits(rewardAmount) == Float.floatToIntBits(other.rewardAmount)
 				&& Objects.equals(rid, other.rid) && Objects.equals(startDate, other.startDate)
 				&& Objects.equals(status, other.status) && Objects.equals(submitDate, other.submitDate)
 				&& Objects.equals(submitTime, other.submitTime) && type == other.type;
 	}
-	
-	
+
 
 }

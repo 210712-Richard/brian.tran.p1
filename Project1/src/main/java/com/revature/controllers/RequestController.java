@@ -14,4 +14,7 @@ public interface RequestController {
 
 	void uploadFile(Context ctx);
 	
+	void getUrgents(Context ctx);
+	
+	void getFile(Context ctx);
 }
