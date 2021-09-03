@@ -28,11 +28,11 @@ To run the project locally, you need to have:
 * IAM user with access to the associated keyspace and S3 bucket
 
 1. Once that's set up clone the repository using:
-* git clone https://github.com/210712-Richard/brian.tran.p1
+  * git clone https://github.com/210712-Richard/brian.tran.p1
 
 2. Then set up environmental variables AWS_USER and AWS_PASS corresponding the the IAM user previously set up
 
 3. Then build the project and run using the driver.java file
 
 4. You can then use Postman to send requests
-5. * The application should be running on port 8080 
+  * The application should be running on port 8080 
