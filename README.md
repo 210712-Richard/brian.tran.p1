@@ -1,8 +1,8 @@
 ## TRMS System
-## Project Description
+# Project Description
 The Tuition Reimbursement System, TRMS, allows users to submit reimbursements for courses and training. The submitted reimbursement must be approved by that employee's supervisor, department head, and benefits coordinator. The benefits coordinator then reviews the grade received before finalizing the reimbursement.
 
-## Technologies Used
+# Technologies Used
 * Java
 * REST
 * Javalin
@@ -14,11 +14,11 @@ The Tuition Reimbursement System, TRMS, allows users to submit reimbursements fo
 * AWS S3
 
 # Features
-Register and login functionalities for users
-Employees can submit reimbursement requests
-Managers can approve or deny pending requests
-Approvals can escalate through departments
-File upload for requests
+* Register and login functionalities for users
+* Employees can submit reimbursement requests
+* Managers can approve or deny pending requests
+* Approvals can escalate through departments
+* File upload for requests
 
 
 
